@@ -296,7 +296,7 @@ void render()
 	green = 0;
 
     }
-    if(g.xres > 450)
+    if(g.xres > 400)
     {
 	red = 0;
 	blue = 255;
