@@ -31,7 +31,7 @@ class Global {
 	float pos[2];
 	Global() {
 	    //xres = 400;
-	    xres = 255;
+	    xres = 400;
 	    yres = 200;
 	    w = 20.0f;
 	    vel = 30.0f;
@@ -267,9 +267,9 @@ void physics()
 
 }
 //int red = 100;
-int red = 255;
-int blue = 120;
-int green = 220;
+int red = 101;
+int blue = 67;
+int green = 33;
 
 void render()
 {
@@ -291,21 +291,19 @@ void render()
 	glEnd();
 	glPopMatrix();
     }
-    //if(g.xres < 400)
-    if(g.xres < 255)
+    if(g.xres < 400)
     {
 	//red = 255;
-	red = -g.xres;
+	red = -g.xres/2;
 	blue = 0;
 	green = 0;
 
     }
-    //if(g.xres > 400)
-    if(g.xres > 255)
+    if(g.xres > 400)
     {
 	red = 0;
 	//blue = 255;
-	blue = g.xres;
+	blue = g.xres/10;
 	green = 0;
 
     }
