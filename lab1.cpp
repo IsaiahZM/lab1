@@ -1,6 +1,6 @@
 //
-//modified by:
-//date:
+//modified by: Isaiah Malleaux
+//date:8/27/24
 //
 //original author: Gordon Griesel
 //date:            Fall 2024
@@ -244,6 +244,9 @@ void physics()
 	//No physics yet.
 
 }
+int red = 100;
+int blue = 120;
+int green = 220;
 
 void render()
 {
@@ -254,7 +257,11 @@ void render()
 	glClear(GL_COLOR_BUFFER_BIT);
 	//draw the box
 	glPushMatrix();
-	glColor3ub(100, 120, 220);
+    if(g.xres > w * 2)
+    {
+	//glColor3ub(100, 120, 220);
+    
+	glColor3ub(red, green, blue);
 	glTranslatef(pos[0], pos[1], 0.0f);
 	glBegin(GL_QUADS);
 		glVertex2f(-w, -w);
@@ -263,19 +270,35 @@ void render()
 		glVertex2f( w, -w);
 	glEnd();
 	glPopMatrix();
+    }
 	pos[0] += dir;
 	if (pos[0] >= (g.xres-w)) {
 		pos[0] = (g.xres-w);
 		dir = -dir;
+        //red = rand();
+        //blue = rand();
+        //green = rand();
 	}
 	if (pos[0] <= w) {
 		pos[0] = w;
 		dir = -dir;
+        //red = 200;
+        //blue = 140;
+        //green = 59;
 	}
+    if(g.xres < 400 || g.yres < 200)
+    {
+        red = 255;
+        blue = 0;
+        green = 0;
+
+    }
+    if(g.xres > 450 || g.yres > 250)
+    {
+        red = 0;
+        blue = 255;
+        green = 0;
+
+    }
+
 }
-
-
-
-
-
-
