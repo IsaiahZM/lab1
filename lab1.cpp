@@ -286,14 +286,14 @@ void render()
         //blue = 140;
         //green = 59;
 	}
-    if(g.xres < 400 || g.yres < 200)
+    if(g.xres < 400)
     {
         red = 255;
         blue = 0;
         green = 0;
 
     }
-    if(g.xres > 450 || g.yres > 250)
+    if(g.xres > 450)
     {
         red = 0;
         blue = 255;
